@@ -1,0 +1,61 @@
+Q1)Write a blog on Difference between HTTP1.1 vs HTTP2
+Ans: HTTP1- 1)HTTP1 is not Fast and Reliable enough when compared to HTTP2
+       2)It loads a single request for every TCP connection(Hence time consumption is more)
+       3)Status codes were used to indicate successful requests and to indicate transmission errors.
+       4)User was able to send files other than plain HTML, including scripts and mediawith the help of content-type header
+       5)HTTP 1 Can define 16 status codes Whereas the error prompt is not given properly
+
+
+HTTP2-1)HTTP2 is Fsst and Reliable enough when compared to HTTP1
+      2)It avoids network delay by using multiplexing(Hence time consumption is less)
+      3)HTTP2 provides a feature called server push that allows the server to send data that the client will need but has not yet requested.
+      4)It Underlies semantics of HTTP such as headers, status codes Provides proper message 
+
+
+
+Q2)Write a blog about objects and its internal representation in Javascript
+Ans:objects may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs(Which provides the proeprties
+
+ Ways to create an object in javascript are as follows-\
+
+*Object literal
+object literal is a comma-separated list of name-value pairs wrapped in curly braces. Object literals encapsulate data, enclosing it in a tidy package.
+var car={id:1 , name:’abc’ , display:function() }
+
+* Object.create()
+The method creates a new object, using an existing object as the prototype of the newly created object.
+using the object literal example as prototype-
+var car2 = Object.create(car);
+car.id=2;
+car.name=’xyz’;
+
+*Object constructor
+Useful when we require to create multiple objects of similar type. In this case, a constructor (kind of blueprint) is created and multiple objects can be initialized using the new keyword using the constructor as a wrapper for the newly created objects.
+construction function-
+function Person(name, age, eye) {
+this.Name = name;
+this.age = age;
+this.eyeColor = eye;
+}
+creating objects using constructor-
+var p1= new Person(“John”, 50, “blue”);
+var p2= new Person(“Sally”, 48, “green”);
+
+*Object.assign()
+It is used to copy the values and properties from one or more source objects to a target object. It invokes getters and setters since it uses both [[Get]] on the source and [[Set]] on the target.
+Input : var obj1 = { a: 10 };
+var obj2 = { b: 20 };
+var obj3 = { c: 30 };
+var new_obj = Object.assign(o1, o2, o3);
+console.log(new_obj);
+Output : Object { a: 10, b: 20, c: 30 }
+
+*Object.fromEntries
+This method transforms a list of key-value pairs into an object.
+const entries = new car([
+[‘id’, 4],
+[‘color’, ‘blue’]
+]);
+const car1= Object.fromEntries(entries);
+console.log(car1);
+output: Object { id: 4, color: ‘blue’}
